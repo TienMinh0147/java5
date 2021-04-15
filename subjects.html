@@ -1,0 +1,26 @@
+ <div class="container my-5" id="content">
+        <d  iv class="subjects">
+            
+            <h1>Môn học :</h1>
+        </div>
+        <div class="row"  >
+            <div class="col-6 subjects-item" ng-repeat="item in list_subject">
+                <div class="subjects-item-image">
+                    <img src="images/logos/{{item.Logo}} " width="130px">
+                </div>
+                <div class="subjects-item-text" style="background-color: slategrey;">
+                    <div class="subjects-item-text-main">
+                        <div>
+                           <h2><div>{{item.Name}}</div></h2> 
+                           
+                        </div>
+                        <a class="btn btn-success" href="#!quiz/{{item.Id}}/{{item.Name}}" role="button">Bắt đầu làm bài</a>
+                    </div>
+                </div>
+            </div>
+           
+
+        </div>
+        
+    </div>
+    

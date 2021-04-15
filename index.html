@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Thi Trắc Nghiệm Các Môn CNTT</title>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"></script>
+    <script src="js/app.js"></script>
+   
+
+    <style>
+        .container-fluid,
+        .container-lg,
+        .container-md,
+        .container-sm,
+        .container-xl {
+            width: 100%;
+            padding-right: 0px;
+            padding-left: 0px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1170px;
+            }
+        }
+
+        body {
+            background-color: slategray;
+            background-color:thistle;
+        }
+
+        a {
+            text-decoration: none !important;
+        }
+
+        a:hover {
+            color: #23B5E1 !important;
+        }
+
+        .navbar li a {
+            display: block;
+            padding: 13px 20px 11px;
+            margin: 0px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #2c2c2c;
+            border: 2px solid transparent;
+            position: relative;
+        }
+
+        .navbar .home {
+            border: 2px solid #201c1d;
+            border-radius: 3px;
+        }
+
+        .navbar .home a:focus,
+        .navbar .home a:hover {
+            color: #2c2c2c !important;
+        }
+
+        .dropdown-item.active,
+        .dropdown-item:active {
+            color: #fff !important;
+            background-color: #23B5E1 !important;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            z-index: 1 !important;
+            width: 100%;
+            box-shadow: 0 3px 10px 0 rgba(115, 143, 147, 0.3);
+        }
+
+        .sticky2 {
+            padding-top: 4.313rem;
+        }
+
+        /* .sticky2 {
+            padding-top: 6rem;
+        } */
+
+        .spacer {
+            height: 6px;
+            width: 49px;
+            background-color: #23B5E1;
+        }
+
+        .subjects h2 {
+            font-size: 42px;
+            font-weight: 300;
+            line-height: 1.52;
+            margin-top: 24px;
+            margin-bottom: 40px;
+        }
+
+        .subjects-item {
+            margin-bottom: 40px;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: stretch;
+            min-height: 200px;
+            position: relative;
+        }
+
+        .subjects-item-image {
+            width: 200px;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        .subjects-item-text {
+            background-color: #fff;
+            padding: 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+
+        .subjects-item-text-main {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-grow: 1;
+        }
+
+        .subjects-item-title-subtext {
+            font-size: 12px;
+            line-height: 18px;
+            opacity: .5;
+            margin-top: 4px;
+        }
+
+
+        .btn-primary-gradient {
+            text-transform: uppercase;
+            padding: 13px 21px;
+            border: none;
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: 1.25px;
+            font-stretch: normal;
+            background: linear-gradient(153deg, #45dbf2, #23B5E1);
+            color: #fff;
+
+        }
+
+        .btn-primary-gradient:hover {
+            color: #fff !important;
+            background: linear-gradient(153deg, #007bff, #45dbf2);
+        }
+
+        .grad:hover {
+            color: #343a40 !important;
+            background-color: transparent !important;
+            border-color: #343a40;
+        }
+
+        /* .card {
+            border-top: 3px solid #0facce;
+            padding-bottom: 12px;
+        }
+
+        .card li {
+            padding-bottom: 0px;
+        }
+
+        .card .col {
+            padding-left: 0;
+        }
+
+        .card img {
+            border-radius: 3px
+        } */
+
+        .footer {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            color: #99979c;
+            background-color:#f1f3fe;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .footer a {
+            color: white;
+        }
+
+        .footer a:focus,
+        .footer a:hover {
+            color: white !important;
+            text-decoration: underline !important;
+        }
+
+        .footer p {
+            margin-bottom: 0rem !important;
+        }
+    </style>
+
+</head>
+
+<body ng-app= "myApp">
+    <header>
+        <div class="container">
+           
+        </div>
+        
+        <div class="container-fluid" id="banner" style="background-color:rgb(90, 205, 157);">
+            <img class="img-fluid" src="images/trangchu.PNG" width="2000"  alt="">
+            <div class="container-fluid" id="navbar">
+                <nav class="navbar navbar-expand-lg bg-white">
+                    <div class="container">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+    
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item home active">
+                                    <a class="nav-link" href="#/!" title="Trang chủ"><i class="fas fa-home"></i>
+                                        FPT Polytechnic  <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#!subjects"><i class="fab fa-accusoft"></i>
+                                        Môn học <span
+                                            class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="gioithieu.html"><i class="fas fa-list-alt"></i>
+                                        Giới thiệu <span
+                                            class="sr-only">(current)</span></a>
+                                </li>
+                                
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="/readfile.html"><i class="fas fa-list-alt"></i>
+                                        Danh sách sinh viên <span
+                                            class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="lienhe.html"><i class="fas fa-phone-square-alt"></i>
+                                        Liên hệ <span
+                                            class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="https://mail.google.com/mail/u/1/#inbox"><i class="fas fa-sms"></i>
+                                        Hỏi đáp <span
+                                            class="sr-only">(current)</span></a>
+                                </li>
+                                
+                                
+                            </ul>
+                            <ul class="navbar-nav ">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="dangnhap.html"><i class="fas fa-sign-in-alt"></i>
+                                        Đăng nhập<span
+                                            class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="dangki.html"><i class="fas fa-sign-out-alt"></i>
+                                        Đăng ký<span class="sr-only">(current)</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+   
+    <div ng-view></div>
+    
+    <footer class="footer ">
+        <div>
+            <img src="images/cuoitrang.PNG" width="1400" alt="">
+        </div>
+    </footer>
+   
+</body>
+<script>
+    window.onscroll = function () {
+        myFunction()
+    };
+z
+    var navbar = document.getElementById("navbar");
+    // var content = document.getElementById("content");
+    var banner = document.getElementById("banner");
+    var sticky = 350;
+
+    function myFunction() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky");
+            // content.classList.add("sticky2");
+            banner.classList.add("sticky2");
+        } else {
+            navbar.classList.remove("sticky");
+            // content.classList.remove("sticky2");
+            banner.classList.remove("sticky2");
+        }
+    }
+</script>
+
+
+<script src="js/jquery-3.4.1.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</html>

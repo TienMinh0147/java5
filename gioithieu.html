@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Thi Trắc Nghiệm Các Môn CNTT</title>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"></script>
+    <script src="js/app.js"></script>
+   
+
+    <style>
+        .container-fluid,
+        .container-lg,
+        .container-md,
+        .container-sm,
+        .container-xl {
+            width: 100%;
+            padding-right: 0px;
+            padding-left: 0px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1170px;
+            }
+        }
+
+        body {
+            background-color: slategray;
+            background-color:thistle;
+        }
+
+        a {
+            text-decoration: none !important;
+        }
+
+        a:hover {
+            color: #23B5E1 !important;
+        }
+
+        .navbar li a {
+            display: block;
+            padding: 13px 20px 11px;
+            margin: 0px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #2c2c2c;
+            border: 2px solid transparent;
+            position: relative;
+        }
+
+        .navbar .home {
+            border: 2px solid #201c1d;
+            border-radius: 3px;
+        }
+
+        .navbar .home a:focus,
+        .navbar .home a:hover {
+            color: #2c2c2c !important;
+        }
+
+        .dropdown-item.active,
+        .dropdown-item:active {
+            color: #fff !important;
+            background-color: #23B5E1 !important;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            z-index: 1 !important;
+            width: 100%;
+            box-shadow: 0 3px 10px 0 rgba(115, 143, 147, 0.3);
+        }
+
+        .sticky2 {
+            padding-top: 4.313rem;
+        }
+
+        /* .sticky2 {
+            padding-top: 6rem;
+        } */
+
+        .spacer {
+            height: 6px;
+            width: 49px;
+            background-color: #23B5E1;
+        }
+
+        .subjects h2 {
+            font-size: 42px;
+            font-weight: 300;
+            line-height: 1.52;
+            margin-top: 24px;
+            margin-bottom: 40px;
+        }
+
+        .subjects-item {
+            margin-bottom: 40px;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: stretch;
+            min-height: 200px;
+            position: relative;
+        }
+
+        .subjects-item-image {
+            width: 200px;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        .subjects-item-text {
+            background-color: #fff;
+            padding: 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+
+        .subjects-item-text-main {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-grow: 1;
+        }
+
+        .subjects-item-title-subtext {
+            font-size: 12px;
+            line-height: 18px;
+            opacity: .5;
+            margin-top: 4px;
+        }
+
+
+        .btn-primary-gradient {
+            text-transform: uppercase;
+            padding: 13px 21px;
+            border: none;
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: 1.25px;
+            font-stretch: normal;
+            background: linear-gradient(153deg, #45dbf2, #23B5E1);
+            color: #fff;
+
+        }
+
+        .btn-primary-gradient:hover {
+            color: #fff !important;
+            background: linear-gradient(153deg, #007bff, #45dbf2);
+        }
+
+        .grad:hover {
+            color: #343a40 !important;
+            background-color: transparent !important;
+            border-color: #343a40;
+        }
+
+        /* .card {
+            border-top: 3px solid #0facce;
+            padding-bottom: 12px;
+        }
+
+        .card li {
+            padding-bottom: 0px;
+        }
+
+        .card .col {
+            padding-left: 0;
+        }
+
+        .card img {
+            border-radius: 3px
+        } */
+
+        .footer {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            color: #99979c;
+            background-color:#f1f3fe;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .footer a {
+            color: white;
+        }
+
+        .footer a:focus,
+        .footer a:hover {
+            color: white !important;
+            text-decoration: underline !important;
+        }
+
+        .footer p {
+            margin-bottom: 0rem !important;
+        }
+    </style>
+
+</head>
+
+<body ng-app= "myApp">
+    <header>
+        <div class="container">
+           
+        </div>
+        
+        <div class="container-fluid" id="banner" style="background-color:rgb(90, 205, 157);">
+            <img class="img-fluid" src="images/trangchu.PNG" width="2000"  alt="">
+            <div class="container-fluid" id="navbar">
+                <nav class="navbar navbar-expand-lg bg-white">
+                    <div class="container">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+    
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item home active">
+                                    <a class="nav-link" href="index.html" title="Trang chủ"><i class="fas fa-home"></i>
+                                        FPT Polytechnic  <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#!subjects"><i class="fab fa-accusoft"></i>
+                                        Làm Bài Thi Quiz <span
+                                            class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href=""><i class="fas fa-list-alt"></i>
+                                        Giới thiệu <span
+                                            class="sr-only">(current)</span></a>
+                                </li>
+                                
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="/readfile.html"><i class="fas fa-list-alt"></i>
+                                        Danh sách sinh viên <span
+                                            class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="lienhe.html"><i class="fas fa-phone-square-alt"></i>
+                                        Liên hệ <span
+                                            class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="https://mail.google.com/mail/u/1/#inbox"><i class="fas fa-sms"></i>
+                                        Hỏi đáp <span
+                                            class="sr-only">(current)</span></a>
+                                </li>
+                                
+                                
+                            </ul>
+                            <ul class="navbar-nav ">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="dangnhap.html"><i class="fas fa-sign-in-alt"></i>
+                                        Đăng nhập<span
+                                            class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="dangki.html"><i class="fas fa-sign-out-alt"></i>
+                                        Đăng ký<span class="sr-only">(current)</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div>
+        FPT (Tập đoàn FPT, tiếng Anh: FPT Group), tên viết tắt của Công ty cổ phần FPT (tên cũ là Công ty Phát triển và Đầu tư Công nghệ), là một trong những công ty dịch vụ công nghệ thông tin lớn nhất tại Việt Nam[cần dẫn nguồn] với lĩnh vực kinh doanh chính là cung cấp các dịch vụ liên quan công nghệ thông tin. Theo thống kê của Chương trình Phát triển Liên Hiệp Quốc, đây là doanh nghiệp lớn thứ 14 của Việt Nam vào năm 2007.[1] Theo VNReport thì đây là doanh nghiệp tư nhân lớn thứ ba của Việt Nam trong năm 2012[2] Tiêu chí để Vietnam Report lựa chọn các doanh nghiệp tư nhân là những doanh nghiệp có vốn sở hữu tư nhân lớn hơn hoặc bằng 51%.[3]. Năm 2018, doanh thu FPT đạt 23.214 tỷ đồng, tăng 17% so với năm 2017; lợi nhuận trước thuế đạt 3.858 tăng 31% so với năm 2017. Doanh thu và lợi nhuận từ thị trường nước ngoài tăng trưởng cao, lần lượt tăng 27% và 35% so với cùng kỳ.[cần dẫn nguồn]
+
+
+Mục lục
+1	Lịch sử
+2	Cơ cấu tổ chức
+3	Lĩnh vực hoạt động chính của FPT
+4	Thành tựu
+4.1	Tại Việt Nam
+4.2	Trên thế giới
+5	Bê bối vi phạm bản quyền
+6	Tham khảo
+7	Liên kết ngoài
+Lịch sử
+Ngày 13/9/1988, FPT được thành lập với tên gọi Công ty Cổ phần Chế biến Thực phẩm hoạt động trong lĩnh vực công nghệ sấy, công nghệ thông tin, công nghệ tự động hóa. (Chữ gốc FPT ban đầu có nghĩa là The Food Processing Technology Company - Công ty Cổ phần Chế biến Thực phẩm)
+
+Ngày 27/10/1990 được đổi thành The Corporation for Financing Promoting Technology - Công ty Đầu tư và Phát triển Công nghệ với hoạt động kinh doanh cốt lõi là CNTT.[4]
+
+Tháng 4 năm 2002 trở thành công ty cổ phần.
+
+Năm 1998 trở thành 1 trong 4 nhà cung cấp dịch vụ Internet đầu tiên tại Việt Nam tạo bước phát triển đột phá cho lĩnh vực này tại Việt Nam.
+
+Ngày 8 tháng 9 năm 2006, Chính phủ Việt Nam ký quyết định thành lập trường Đại học FPT trực thuộc Tập đoàn FPT. Hiệu trưởng của trường là Tiến sĩ Lê Trường Tùng, còn Chủ tịch Hội đồng Quản trị là Phó giáo sư, Tiến sĩ Trương Gia Bình.[5][6]
+
+Ngày 24 tháng 10 năm 2006, FPT đã công bố quyết định phát hành thêm cổ phiếu cho hai nhà đầu tư chiến lược là Quỹ đầu tư Texas Pacific Group (TPG) và Intel Capital. FPT nhận được một khoản đầu tư là 36,5 triệu USD thông qua quỹ đầu tư TPG Ventures và Intel Capital.[7]
+   <center><div>
+    <img src="/images/2.PNG" alt="">
+</div></center>
+</div>
+    <footer class="footer ">
+        <div>
+            <img src="images/cuoitrang.PNG" width="1400" alt="">
+        </div>
+    </footer>
+   
+</body>

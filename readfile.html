@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="js/a.js"></script>
+    <title>Document</title>
+    <style>
+        * { /* reset lại margin và padding cho các tag */
+            margin: 0;
+            padding: 0;
+        }
+        .tableStyle {
+            border: none;
+            width: 100%;
+        }
+        .tableStyle th {
+            background-color: #cad8fa;
+            padding: 5px;
+        }
+        .tableStyle td {
+            background-color: #f0e7da;
+            padding: 5px;
+        }
+        </style>
+</head>
+
+<h1>Danh sách sinh viên</h1>
+
+    <body ng-app="myApp">
+        <div ng-controller = "studentCtrl">
+            <div ng-repeat="sub in list_student">
+               
+                    
+                    <table class="tableStyle">
+                        <tr>
+                            <th>Tên</th>
+                            <th>Mật khẩu</th>
+                            <th>Tên đầy đủ</th>
+                            <th>Gmail</th>
+                            <th>Giới tính</th>
+                            <th>Ngày sinh</th>
+                            <th>Học phí</th>
+                            <th>Điểm</th>
+                            
+                        </tr>
+                        <tr>
+                            <td>{{sub.username}}</td>
+                            <td>{{sub.password}}</td>
+                            <td>{{sub.fullname}}</td>
+                            <td>{{sub.email}}</td>
+                            <td>{{sub.gender}}</td>
+                            <td>{{sub.birthday}}</td>
+                            <td>{{sub.schoolfee}}</td>
+                            <td>{{sub.marks}}</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>{{sub.username}}</td>
+                            <td>{{sub.password}}</td>
+                            <td>{{sub.fullname}}</td>
+                            <td>{{sub.email}}</td>
+                            <td>{{sub.gender}}</td>
+                            <td>{{sub.birthday}}</td>
+                            <td>{{sub.schoolfee}}</td>
+                            <td>{{sub.marks}}</td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>{{sub.username}}</td>
+                            <td>{{sub.password}}</td>
+                            <td>{{sub.fullname}}</td>
+                            <td>{{sub.email}}</td>
+                            <td>{{sub.gender}}</td>
+                            <td>{{sub.birthday}}</td>
+                            <td>{{sub.schoolfee}}</td>
+                            <td>{{sub.marks}}</td>
+                            
+                        </tr>
+                        
+                        
+            </div>
+        </div>
+    
+        
+    </body>
+
+  
+</html>
